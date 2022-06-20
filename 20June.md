@@ -1,4 +1,4 @@
-> OpenAPI - czym jest? w czym nam pomaga?
+## OpenAPI - czym jest? w czym nam pomaga?
 
 OpenAPI to format w jakim jest opisywane i dokumentowane API. Jest to teraz standard w jakim dokumentowane i rozwijane powinno być RESTful API. Ma ono z góry określoną strukturę co zapewnia szybkość zrozumienia przez różnych deweloperów, poprzez ułatwienie dostępności (zrozumienie działania bez czytania kodu źródłowego). Format w jakim OpenAPI jest pisane to YAML lub JSON. 
 
@@ -10,12 +10,12 @@ Każda poprawna specyfikacja OpenAPI zawiera:
  - responses - statusy odpowiedzi, response body (properties)
 - security - używane do opisania jaki rodzaj autentykacji jest obecny (np. OAuth 2 lub API key) 
 
-> Czym w Larvie są Policies? w jaki sposób możemy dzięki nim sprawdzić czy użytkownik jest autoryzowany do pobrania jakiegoś rekordu? Podajcie krótkiego snippeta, jak może działać takie połączenie Policy + FormRequest
+## Czym w Larvie są Policies? w jaki sposób możemy dzięki nim sprawdzić czy użytkownik jest autoryzowany do pobrania jakiegoś rekordu? Podajcie krótkiego snippeta, jak może działać takie połączenie Policy + FormRequest
 
 Policies w Larvie są używane do autentykacji akcji na danym modelu / resource. Można szybko stworzyć Policy używając komendy php artisan make:policy. Aby sprawdzić czy dany użytkownik jest zautoryzowany do pobrania jakiegoś rekordu możemy w Policy opisać w jakich przypadkach użytkownik jest do tego uprawniony. Mój przykład pokazuje użycie połączenia użycia Policy i FormRequest aby upewnić się że stworzyć nowego użytkownika może tylko Admin, oraz że walidacja zasadami zostanie przeprowadzona przez Form Request. 
 
 in \App\Http\Requests\CreateUserRequest:
-```
+```php
 class CreateUserRequest extends FormRequest
 {
     public function rules()
@@ -34,7 +34,7 @@ class CreateUserRequest extends FormRequest
 then injecting the Form Request into the controller
 
 in Controller:
-```
+```php
 public function create(CreateUserRequest $request, Post $post)
     {
         if ($request->user()->cannot('create', $post)) {
@@ -46,7 +46,7 @@ public function create(CreateUserRequest $request, Post $post)
 ```
 
 in Policy:
-```
+```php
 class PostPolicy
 {
     public function create(?User $user, Post $post)

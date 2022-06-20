@@ -1,10 +1,10 @@
-> Storage obiektowy - np. AWS S3 - co to jest i jakie ma korzyści?
+## Storage obiektowy - np. AWS S3 - co to jest i jakie ma korzyści?
 
 Storage obiektowy to metoda przechowywania danych znana również jako obiektowa pamięć masowa.  W tym typie dane są przechowywane w samoistnych obiektach. Obiekty te posiadają unikalny id, który służy do uzyskania dostępu do obiektu.
 
 Inną metodą przechowywania danych, która jest alternatywą dla obiektowej pamięci i jest z nią często porównywana to blokowa pamięć masowa. W tym typie pamięci dane są dzielone (odpowiedzialna za to jest sieć SAN, Storage Area Network), przechowywane w blokach oraz umieszczane w stosunku do siebie w taki sposób, który zapewni największą wydajność.
 
-> Jak byś wyjaśnił 6-latkowi, jak działają kolejki (queue)?
+## Jak byś wyjaśnił 6-latkowi, jak działają kolejki (queue)?
 
 Wyjaśniłbym to na metaforze dużego sklepu z cukierkami:
 
